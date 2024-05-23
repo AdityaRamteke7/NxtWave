@@ -40,7 +40,7 @@ const HomePage = () => {
         <SearchBar searchQuery={searchQuery} onSearch={setSearchQuery} />
         <button onClick={() => navigate("/add-resource")}>Add Item</button>
       </header>
-      <Tabs activeTab={activeTab} onChangeTab={setActiveTab} />
+      <Tabs onChangeTab={setActiveTab} />
       <div className="resource-list">
         {currentItems.map((resource) => (
           <ResourceCard key={resource.id} resource={resource} />

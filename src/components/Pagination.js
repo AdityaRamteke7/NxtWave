@@ -1,15 +1,15 @@
-import React from 'react';
-
+import React from "react";
+import "./Pagination.css";
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
-  const pages = [...Array(totalPages).keys()].map(n => n + 1);
+  const pages = [...Array(totalPages).keys()].map((n) => n + 1);
 
   return (
     <div className="pagination">
-      {pages.map(page => (
+      {pages.map((page) => (
         <button
+          className="button "
           key={page}
-          className={page === currentPage ? 'active' : ''}
           onClick={() => onPageChange(page)}
         >
           {page}

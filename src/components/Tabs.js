@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
+import "./Tabs.css";
 
-
-const Tabs = ({ activeTab, onChangeTab }) => (
+const Tabs = ({ onChangeTab }) => (
   <div className="tabs">
-    <button className={activeTab === 'resources' ? 'active' : ''} onClick={() => onChangeTab('resources')}>Resources</button>
-    <button className={activeTab === 'requests' ? 'active' : ''} onClick={() => onChangeTab('requests')}>Requests</button>
-    <button className={activeTab === 'users' ? 'active' : ''} onClick={() => onChangeTab('users')}>Users</button>
+    <button className="buttonTabs" onClick={() => onChangeTab("resources")}>Resources</button>
+    <button className="buttonTabs" onClick={() => onChangeTab("requests")}>Requests</button>
+    <button className="buttonTabs" onClick={() => onChangeTab("users")}>Users</button>
   </div>
 );
 
