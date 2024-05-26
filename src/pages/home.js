@@ -8,6 +8,8 @@ import SearchBar from "../components/SerachBar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./home.css";
+import logo from "../assets/download.jpg"
+
 
 const HomePage = () => {
   const { resources, loading, error } = useFetchResources();
@@ -24,7 +26,7 @@ const HomePage = () => {
       resource.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-  const itemsPerPage = 6;
+  const itemsPerPage = 9;
   const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
   const currentItems = filteredResources.slice(
     (currentPage - 1) * itemsPerPage,
@@ -33,12 +35,22 @@ const HomePage = () => {
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
-
+  console.log(resources)
   return (
     <div className="home-page">
+
+
       <header>
+        <nav >
+          <div >
+            <a className="navbar-brand" href="#">
+              <img style={{ width: "100px" }} src={logo} alt="logo" />
+            </a>
+          </div>
+        </nav>
+
         <SearchBar searchQuery={searchQuery} onSearch={setSearchQuery} />
-        <button onClick={() => navigate("/add-resource")}>Add Item</button>
+        <button className="additem" onClick={() => navigate("/add-resource")}>Add Item</button>
       </header>
       <Tabs onChangeTab={setActiveTab} />
       <div className="resource-list">
